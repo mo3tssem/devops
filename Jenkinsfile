@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('Checkout') {
       steps {
-        git branch: 'master', url: 'https://mo3tssem@dev.azure.com/mo3tssem/curamet/_git/node-api'
+        git branch: 'master', url: 'https://github.com/mo3tssem/devops.git'
       }
     }
     stage('1- Install Dependencies') {
