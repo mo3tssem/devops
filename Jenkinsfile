@@ -1,20 +1,23 @@
 pipeline {
-  agent any
-  stages {
-    stage('Checkout') {
-      steps {
-        git branch: 'master', url: 'https://github.com/mo3tssem/devops.git'
-      }
+    agent any
+    tools {
+        nodejs 'nodeJsInstallationName'
     }
-    stage('1- Install Dependencies') {
-      steps {
-        sh 'npm install'
-      }
+    stages {
+        stage('Checkout') {
+            steps {
+                git branch: 'main', url: 'https://github.com/mo3tssem/devops'
+            }
+        }
+        stage('1.....Install dependencies') {
+            steps {
+                sh 'npm ci'
+            }
+        }
+        stage('2...Run tests') {
+            steps {
+                sh 'npm test'
+            }
+        }
     }
-    stage('2- Run Tests') {
-      steps {
-        sh 'npm test'
-      }
-    }
-  }
 }
