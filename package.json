@@ -4,9 +4,14 @@
     "description": "A small Node.js application hosted by Nginx, both running in Docker containers",
     "main": "app.js",
     "scripts": {
-        "start": "node app.js"
+        "start": "node app.js",
+        "test": "mocha"
     },
     "dependencies": {
         "express": "^4.17.1"
+    },
+    "devDependencies": {
+        "chai": "^4.3.7",
+        "mocha": "^10.2.0"
     }
 }
